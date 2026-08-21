@@ -25,3 +25,13 @@ async def start_handler(message: Message):
 async def help_handler(message: Message):
     await message.answer("Here are some commands you can use:\n/start - Start the bot\n/help - Show this help message\n/settings "
     "- Configure your settings\n/about - Learn more about this bot")
+
+@router.message(Command("settings"))
+@router.message(F.text == "Settings")
+async def settings_handler(message: Message):
+    await message.answer("Settings are not available yet. Please check back later.")
+
+@router.message(Command("about"))
+@router.message(F.text == "About")
+async def about_handler(message: Message):
+    await message.answer("This bot is designed to assist you with various tasks. Stay tuned for more features!")
